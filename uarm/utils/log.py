@@ -12,7 +12,7 @@ import os
 import functools
 from logging.handlers import RotatingFileHandler
 
-log_path = os.path.join(os.path.expanduser('~'), '.UFACTORY', 'log', 'uarm', 'sdk')
+log_path = os.environ.get('LOG_PATH', '/var/log/uarm/sdk')
 if not os.path.exists(log_path):
     os.makedirs(log_path)
 
