@@ -12,9 +12,10 @@ The library only supports uArm Swift/SwiftPro. For Metal, please use [pyuarm](ht
 
 
 ## Update Summary for 2.0
+- Support for use inside containerised environments with a new configurable log path (UARM_LOG_PATH)
 - Support multi-machine synchronization.
 - New Support Swift Pro firmware V4.0 or later.
-- Supoort event callback register and release.
+- Support event callback register and release.
 - Support api callback.
 - Support more custom configuration.
 - Better in management threads.
