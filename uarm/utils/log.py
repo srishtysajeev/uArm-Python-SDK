@@ -12,14 +12,9 @@ import os
 import functools
 from logging.handlers import RotatingFileHandler
 
-try:
-    log_path = os.path.join(os.path.expanduser('~'), '.UFACTORY', 'log', 'uarm', 'sdk')
-    if not os.path.exists(log_path):
-        os.makedirs(log_path)
-except PermissionError: 
-    log_path = os.environ.get('UARM_LOG_PATH', '/var/log/uarm/sdk')
-    if not os.path.exists(log_path):
-        os.makedirs(log_path)
+default_log_path = os.path.join(os.path.expanduser('~'), '.UFACTORY', 'log', 'uarm', 'sdk')
+log_path = os.environ.get('UARM_LOG_PATH', default_log_path)
+os.makedirs(log_path, exist_ok=True)
 
 logging.VERBOSE = 5
 logging.addLevelName(logging.VERBOSE, 'VERBOSE')
